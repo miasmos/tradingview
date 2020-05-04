@@ -1,11 +1,12 @@
 import { HeadlineOptions, HeadlineResponse, Headline, ScanOptions, ScanResponse } from "../types";
-import { Subdomain, Locale, Market } from "../enum";
+import { Subdomain, Locale, Market, HeadlineCategory } from "../enum";
 import client from "./client";
 import Sentiment from "../services/sentiment";
 
 class TradingViewApi {
     static async headlines({
         locale = Locale.English,
+        category = HeadlineCategory.Stock,
         ...options
     }: HeadlineOptions): Promise<HeadlineResponse> {
         const headlines = await client.get<HeadlineResponse>({
@@ -13,6 +14,7 @@ class TradingViewApi {
             path: "/headlines/yahoo/",
             params: {
                 locale,
+                category,
                 ...options
             },
             isCached: true

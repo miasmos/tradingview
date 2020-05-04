@@ -12,7 +12,7 @@ export interface Headline {
 }
 
 export interface HeadlineOptions {
-    category: HeadlineCategory;
+    category?: HeadlineCategory;
     proSymbol?: string;
     locale?: Locale;
 }
@@ -44,7 +44,7 @@ interface ScanSort {
     sortOrder: string;
 }
 
-interface ScanConfig {
+export interface ScanConfig {
     filter: ScanFilterItem[];
     options: ScanOptionItem;
     symbols: ScanSymbols;

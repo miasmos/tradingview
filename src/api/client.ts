@@ -93,7 +93,7 @@ class TradingViewClient {
 
 TradingViewClient.client.interceptors.request.use(({ method, headers, url, params, ...config }) => {
     console.log(`${method!.toUpperCase()} ${url}?${new URLSearchParams(params).toString()}`);
-    console.log(JSON.stringify(headers, undefined, 2));
+    // console.log(JSON.stringify(headers, undefined, 2));
     return {
         method,
         headers,

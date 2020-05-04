@@ -1,9 +1,9 @@
 {
-    "name": "tradingview",
-    "version": "0.1.0",
+    "name": "node-tradingview",
+    "version": "0.0.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "description": "Condos is a promise-based Node.js library for the Tradingview.com api.",
+    "description": "TradingView is a promise-based Node.js library for the Tradingview.com api.",
     "files": [
         "dist/**/*"
     ],
@@ -25,7 +25,6 @@
         "etag": "^1.8.1",
         "lodash": "^4.17.15",
         "luxon": "^1.23.0",
-        "md5": "^2.2.1",
         "random-useragent": "^0.3.1",
         "sentiment": "^5.0.2",
         "snyk": "^1.316.1",
