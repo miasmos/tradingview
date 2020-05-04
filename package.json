@@ -13,7 +13,7 @@
         "prod": "webpack --mode=production && npm run docs",
         "dev": "webpack -w --mode=development",
         "example": "cross-env HOSTNAME=tradingview.com ts-node example/index.ts",
-        "docs": "typedoc --excludeExternals --externalPattern \"**/node_modules/**\" --ignoreCompilerErrors --name \"Condos\" --mode \"file\" --out \"docs/condos\" \"src\"",
+        "docs": "typedoc --excludeExternals --externalPattern \"**/node_modules/**\" --ignoreCompilerErrors --name \"TradingView\" --mode \"file\" --out \"docs/tradingview\" \"src\"",
         "test": "nyc mocha --file ./test/setup.ts -r ts-node/register test/**/*.spec.ts",
         "coverage": "nyc --reporter=lcov npm test",
         "snyk-protect": "snyk protect",
