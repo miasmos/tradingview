@@ -1,0 +1,61 @@
+{
+    "filter": [
+        { "left": "gap", "operation": "nempty" },
+        { "left": "type", "operation": "in_range", "right": ["stock", "dr", "fund"] },
+        {
+            "left": "subtype",
+            "operation": "in_range",
+            "right": ["common", "", "etf", "unit", "mutual", "money", "reit", "trust"]
+        },
+        { "left": "exchange", "operation": "in_range", "right": ["AMEX", "NASDAQ", "NYSE"] },
+        {
+            "left": "sector",
+            "operation": "in_range",
+            "right": [
+                "Commercial Services",
+                "Communications",
+                "Consumer Durables",
+                "Consumer Non-Durables",
+                "Consumer Services",
+                "Distribution Services",
+                "Electronic Technology",
+                "Energy Minerals",
+                "Finance",
+                "Industrial Services",
+                "Miscellaneous",
+                "Process Industries",
+                "Producer Manufacturing",
+                "Retail Trade",
+                "Technology Services",
+                "Transportation",
+                "Utilities"
+            ]
+        },
+        { "left": "volume", "operation": "egreater", "right": 50000 },
+        { "left": "relative_volume_10d_calc", "operation": "less", "right": 0.2 },
+        { "left": "open", "operation": "greater", "right": 1 },
+        { "left": "gap", "operation": "in_range", "right": [2, 8] }
+    ],
+    "options": { "lang": "en" },
+    "symbols": { "query": { "types": [] }, "tickers": [] },
+    "columns": [
+        "name",
+        "gap",
+        "volume",
+        "average_volume_30d_calc",
+        "change_from_open_abs",
+        "change_from_open",
+        "open",
+        "sector",
+        "description",
+        "name",
+        "type",
+        "subtype",
+        "update_mode",
+        "pricescale",
+        "minmov",
+        "fractional",
+        "minmove2"
+    ],
+    "sort": { "sortBy": "gap", "sortOrder": "desc" }
+}
