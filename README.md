@@ -1,82 +1,28 @@
-# Condos  
-[![npm version](https://badge.fury.io/js/condos.svg)](https://badge.fury.io/js/condos)
-[![Known Vulnerabilities](https://snyk.io/test/github/stephenpoole/condos/badge.svg)](https://snyk.io/test/github/stephenpoole/condos)
-[![Build Status](https://travis-ci.com/stephenpoole/condos.svg?token=qUi7ehLLw3vHe3SLFzbH&branch=master)](https://travis-ci.com/stephenpoole/condos)
-[![codecov](https://codecov.io/gh/stephenpoole/condos/branch/master/graph/badge.svg?token=mOjWyZQkOk)](https://codecov.io/gh/stephenpoole/condos)  
+# Condos
 
-*Condos* is a promise-based Node.js library for the Condos.ca api.
+[![npm version](https://badge.fury.io/js/tradingview.svg)](https://badge.fury.io/js/condos)
+[![Known Vulnerabilities](https://snyk.io/test/github/stephenpoole/tradingview/badge.svg)](https://snyk.io/test/github/stephenpoole/tradingview)
+[![Build Status](https://travis-ci.com/stephenpoole/tradingview.svg?token=qUi7ehLLw3vHe3SLFzbH&branch=master)](https://travis-ci.com/stephenpoole/tradingview)
+[![codecov](https://codecov.io/gh/stephenpoole/tradingview/branch/master/graph/badge.svg?token=mOjWyZQkOk)](https://codecov.io/gh/stephenpoole/tradingview)
+
+_TradingView_ is a promise-based Node.js library for the TradingView.com api.
 
 ## Installation
-Install `condos` and save to your `package.json` in one easy step.
+
+Install `node-tradingview` and save to your `package.json` in one easy step.
 
 With npm:
+
 ```
-npm install condos --save
+npm install node-tradingview --save
 ```
 
 With yarn:
+
 ```
-yarn add condos
+yarn add node-tradingview
 ```
 
 ## Documentation
-You may find the *Condos* documentation [here](https://stephenpoole.github.io/condos).
 
-## Usage
-1) Import *Condos* into your application:
-```
-import Condos from 'condos';
-```
-
-2) Call an api method to request data:
-
-With Promises:
-```
-import Condos, { 
-    Precision,
-    GroupType,
-    OfferType,
-    NeighbourhoodTorontoDowntown,
-    NeighbourhoodTorontoEastEnd,
-    SublocalityToronto
-} from 'condos';
-
-Condos.listings({
-    precision: Precision.Normal,
-    neighbourhood: [
-        NeighbourhoodTorontoDowntown.KingWest,
-        NeighbourhoodTorontoEastEnd.EastEndDanforth,
-    ],
-    sublocality: [SublocalityToronto.Etobicoke],
-    groupBy: GroupType.Neighbourhood,
-    offer: OfferType.Sale,
-}).then(data => {
-  console.log(data);
-});
-```
-
-With async/await:
-```
-import Condos, { 
-    Precision,
-    GroupType,
-    OfferType,
-    NeighbourhoodTorontoDowntown,
-    NeighbourhoodTorontoEastEnd,
-    SublocalityToronto
-} from 'condos';
-
-(async () => {
-  const data = await Condos.listings({
-      precision: Precision.Normal,
-      neighbourhood: [
-          NeighbourhoodTorontoDowntown.KingWest,
-          NeighbourhoodTorontoEastEnd.EastEndDanforth,
-      ],
-      sublocality: [SublocalityToronto.Etobicoke],
-      groupBy: GroupType.Neighbourhood,
-      offer: OfferType.Sale,
-  });
-  console.log(data);
-})();
-```
+You may find the _TradingView_ documentation [here](https://stephenpoole.github.io/tradingview).
