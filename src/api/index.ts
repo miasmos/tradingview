@@ -4,6 +4,8 @@ import client from "./client";
 import Sentiment from "../services/sentiment";
 
 class TradingViewApi {
+    static client = client;
+
     static async headlines({
         locale = Locale.English,
         category = HeadlineCategory.Stock,

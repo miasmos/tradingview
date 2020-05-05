@@ -8,11 +8,11 @@ module.exports = {
     output: {
         filename: "index.js",
         libraryTarget: "umd",
-        library: "condos",
-        umdNamedDefine: true,
+        library: "node-tradingview",
+        umdNamedDefine: true
     },
     resolve: {
-        extensions: [".ts"],
+        extensions: [".ts"]
     },
     target: "node",
     externals: [nodeExternals()],
@@ -21,10 +21,10 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: ["awesome-typescript-loader", "eslint-loader"],
+                use: ["awesome-typescript-loader", "eslint-loader"]
             },
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-        ],
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+        ]
     },
     devtool: "source-map",
     plugins: [
@@ -33,7 +33,7 @@ module.exports = {
             exclude: /node_modules/,
             failOnError: true,
             allowAsyncCycles: false,
-            cwd: process.cwd(),
-        }),
-    ],
+            cwd: process.cwd()
+        })
+    ]
 };
