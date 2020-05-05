@@ -1,4 +1,4 @@
-import { HeadlineOptions, HeadlineResponse, Headline, ScanOptions, ScanResponse } from "../types";
+import { HeadlineOptions, HeadlineResponse, Headline, ScanOptions, ScanResponse } from "../type";
 import { Subdomain, Locale, Market, HeadlineCategory } from "../enum";
 import client from "./client";
 import Sentiment from "../services/sentiment";

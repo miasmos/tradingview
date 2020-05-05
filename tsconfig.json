@@ -17,8 +17,7 @@
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "resolveJsonModule": true,
-        "typeRoots": ["./src/types", "./node_modules/@types"]
+        "resolveJsonModule": true
     },
     "include": ["./src/**/*", "src/types"],
     "compileOnSave": true
