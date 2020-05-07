@@ -20,7 +20,7 @@ export interface HeadlineOptions {
 export type HeadlineResponse = Headline[];
 
 // Scan
-interface ScanData {
+export interface ScanData {
     s: string;
     d: (string | number)[];
 }
