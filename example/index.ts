@@ -19,7 +19,7 @@ const filter = require("./buyGaps.json");
             password: "password"
         });
 
-        console.log(await TradingViewApi.tickets());
+        console.log(await TradingViewApi.logout());
     } catch (error) {
         console.log("got error:", error);
     }

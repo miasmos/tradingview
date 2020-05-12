@@ -51,7 +51,7 @@ class TradingViewClient {
 
     cookies = this.getCookies();
 
-    sessionId: string;
+    sessionId: string | undefined;
 
     async get<T>({
         subdomain = Subdomain.Root,
@@ -176,6 +176,14 @@ class TradingViewClient {
                 2
             )}.${Util.randomInt(10)}.${Util.randomInt(10)}.${uuid.v4()}`
         };
+    }
+
+    get hasSession(): boolean {
+        return typeof this.sessionId !== "undefined";
+    }
+
+    clearSession(): void {
+        this.sessionId = undefined;
     }
 }
 

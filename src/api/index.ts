@@ -62,6 +62,17 @@ class TradingViewApi {
         });
     }
 
+    static async logout(): Promise<boolean> {
+        if (client.hasSession) {
+            await client.post<void>({
+                path: "/accounts/logout/"
+            });
+            client.clearSession();
+            return true;
+        }
+        return false;
+    }
+
     static tickets(): Promise<TicketResponse> {
         return client.get<TicketResponse>({
             subdomain: Subdomain.Middleware,
