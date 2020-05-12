@@ -141,7 +141,7 @@ class TradingViewClient {
         if (status !== 200) {
             throw new Error(`Got status code ${status}`);
         }
-        const { "set-cookie": setCookie } = headers;
+        const { "set-cookie": setCookie } = headers || {};
         if (setCookie) {
             const { sessionid } = setCookie.reduce(
                 (obj: { [key: string]: string | undefined }, entry: string) => {
