@@ -143,7 +143,7 @@ class TradingViewClient {
         }
         const { "set-cookie": setCookie } = headers || {};
         if (setCookie) {
-            const { sessionid } = setCookie.reduce(
+            const { sessionid = "" } = setCookie.reduce(
                 (obj: { [key: string]: string | undefined }, entry: string) => {
                     entry
                         .split("; ")
@@ -156,7 +156,7 @@ class TradingViewClient {
                 {}
             );
 
-            if (sessionid) {
+            if (sessionid.length > 0) {
                 this.sessionId = sessionid;
                 Util.log(`Logged in with session id ${sessionid}`);
             }
