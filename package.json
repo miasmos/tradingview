@@ -23,6 +23,7 @@
     "dependencies": {
         "axios": "^0.19.2",
         "etag": "^1.8.1",
+        "form-data": "^3.0.0",
         "lodash": "^4.17.15",
         "luxon": "^1.23.0",
         "random-useragent": "^0.3.1",
@@ -34,6 +35,7 @@
         "@istanbuljs/nyc-config-typescript": "^1.0.1",
         "@types/chai": "^4.2.11",
         "@types/etag": "^1.8.0",
+        "@types/form-data": "^2.5.0",
         "@types/lodash": "^4.14.150",
         "@types/luxon": "^1.22.0",
         "@types/md5": "^2.2.0",

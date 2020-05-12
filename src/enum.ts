@@ -1,6 +1,8 @@
 export enum Subdomain {
     News = "news-headlines",
-    Scanner = "scanner"
+    Scanner = "scanner",
+    Middleware = "support-middleware",
+    Root = "www"
 }
 
 export enum HeadlineCategory {

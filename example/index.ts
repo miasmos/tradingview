@@ -1,25 +1,25 @@
-import TradingViewApi, { HeadlineCategory } from "../src";
+import TradingViewApi, { HeadlineCategory } from "../dist";
 
 const filter = require("./buyGaps.json");
 
 (async (): Promise<void> => {
     try {
         console.log(
-            await TradingViewApi.headlines({
-                category: HeadlineCategory.Stock,
-                proSymbol: "AAPL"
-            })
+            JSON.stringify(
+                await TradingViewApi.scan({
+                    config: filter
+                }),
+                undefined,
+                2
+            )
         );
 
-        // console.log(
-        //     JSON.stringify(
-        //         await TradingViewApi.scan({
-        //             config: filter
-        //         }),
-        //         undefined,
-        //         2
-        //     )
-        // );
+        await TradingViewApi.login({
+            username: "username",
+            password: "password"
+        });
+
+        console.log(await TradingViewApi.tickets());
     } catch (error) {
         console.log("got error:", error);
     }
