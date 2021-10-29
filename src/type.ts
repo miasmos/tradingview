@@ -159,3 +159,22 @@ export interface LoginResponse {
 export interface TicketResponse {
     ticketsCount: number;
 }
+
+// Watchlists
+export interface WatchListsItem {
+    active: boolean;
+    color: string | null;
+    created: string;
+    id: number;
+    legacy_id: string;
+    modified: string;
+    name: string;
+    shared: boolean;
+    symbols: string[];
+    type: string;
+}
+export type WatchListsResponse = WatchListsItem[];
+export interface SetWatchListOptions {
+    name: string;
+    symbols: string[];
+}

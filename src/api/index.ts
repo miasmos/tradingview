@@ -8,7 +8,10 @@ import {
     ScanResponse,
     LoginOptions,
     LoginResponse,
-    TicketResponse
+    TicketResponse,
+    WatchListsResponse,
+    WatchListsItem,
+    SetWatchListOptions
 } from "../type";
 import { Subdomain, Locale, Market, HeadlineCategory } from "../enum";
 import client from "./client";
@@ -78,6 +81,28 @@ class TradingViewApi {
             subdomain: Subdomain.Middleware,
             path: "/api/v1/tickets/count_by_userid"
         });
+    }
+
+    static watchlists(): Promise<WatchListsResponse> {
+        return client.get<WatchListsResponse>({
+            path: "/api/v1/symbols_list/custom/"
+        });
+    }
+
+    static watchlist(id: number): Promise<WatchListsItem> {
+        return client.get<WatchListsItem>({
+            path: `/api/v1/symbols_list/custom/${id}`
+        });
+    }
+
+    static setWatchlist(config: SetWatchListOptions): Promise<WatchListsItem | void> {
+        if (client.hasSession) {
+            return client.post<WatchListsItem>({
+                path: "/api/v1/symbols_list/custom/",
+                data: config
+            });
+        }
+        return Promise.resolve();
     }
 }
 

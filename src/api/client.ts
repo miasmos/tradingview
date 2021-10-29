@@ -26,7 +26,8 @@ interface PostOptions {
     path: string;
     params?: { [key: string]: string | number };
     isCached?: boolean;
-    form?: { [key: string]: string | number };
+    form?: { [key: string]: string | number | string[] | number[] };
+    data?: unknown;
 }
 
 class TradingViewClient {
@@ -95,9 +96,9 @@ class TradingViewClient {
         path,
         params,
         form,
+        data,
         isCached = false
     }: PostOptions): Promise<T> {
-        let data;
         if (form) {
             data = Object.entries(form).reduce((form, [key, value]) => {
                 form.append(key, value);
@@ -128,7 +129,8 @@ class TradingViewClient {
                         "if-modified-since": DateTime.local().toHTTP(),
                         "if-none-match": `W/${etag(Math.random().toString())}`
                     }),
-                    ...(data && data.getHeaders())
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    ...(data && "getHeaders" in (data as any) && (data as any).getHeaders())
                 }
             }
         );
@@ -156,7 +158,7 @@ class TradingViewClient {
                 {}
             );
 
-            if (sessionid.length > 0) {
+            if (sessionid.length > 2) {
                 this.sessionId = sessionid;
                 Util.log(`Logged in with session id ${sessionid}`);
             }
